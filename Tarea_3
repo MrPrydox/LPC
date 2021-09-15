@@ -1,57 +1,29 @@
 
 //Weather API
-import requests
 
-url = "https://weatherapi-com.p.rapidapi.com/timezone.json"
-
-querystring = {"q":"Mexico"}
-
-headers = {
-    'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
-    'x-rapidapi-key': "f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7"
-    }
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
-
+curl --request GET \
+	--url 'https://weatherapi-com.p.rapidapi.com/timezone.json?q=Mexico' \
+	--header 'x-rapidapi-host: weatherapi-com.p.rapidapi.com' \
+	--header 'x-rapidapi-key: f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7'
 
 
 
 //Google Translate API
 
-import requests
-
-url = "https://google-translate20.p.rapidapi.com/translate"
-
-payload = "text=The%20POST%20method%20has%20several%20advantages%20over%20GET%3A%20it%20is%20more%20secure%20because%20most%20of%20the%20request%20is%20hidden%20from%20the%20user%3B%20Suitable%20for%20big%20data%20operations.&tl=en&sl=en"
-headers = {
-    'content-type': "application/x-www-form-urlencoded",
-    'x-rapidapi-host': "google-translate20.p.rapidapi.com",
-    'x-rapidapi-key': "f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7"
-    }
-
-response = requests.request("POST", url, data=payload, headers=headers)
-
-print(response.text)
+curl --request POST \
+	--url https://google-translate1.p.rapidapi.com/language/translate/v2 \
+	--header 'accept-encoding: application/gzip' \
+	--header 'content-type: application/x-www-form-urlencoded' \
+	--header 'x-rapidapi-host: google-translate1.p.rapidapi.com' \
+	--header 'x-rapidapi-key: f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7' \
+	--data 'q=Hello, world!' \
+	--data target=ru
 
 
 
+//COVID Status
 
-//IP GeoLocation API
-
-import requests
-
-url = "https://ip-geo-location.p.rapidapi.com/ip/check"
-
-querystring = {"format":"json","language":"es"}
-
-headers = {
-    'x-rapidapi-host': "ip-geo-location.p.rapidapi.com",
-    'x-rapidapi-key': "f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7"
-    }
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
-
+curl --request GET \
+	--url https://coronavirus-smartable.p.rapidapi.com/stats/v1/MX/ \
+	--header 'x-rapidapi-host: coronavirus-smartable.p.rapidapi.com' \
+	--header 'x-rapidapi-key: f1cde436f0msh3442ae6f6f81043p1286d3jsn0fb731ecf8a7'
